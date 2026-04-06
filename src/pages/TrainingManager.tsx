@@ -97,7 +97,7 @@ export default function TrainingManager() {
             </DialogHeader>
             <div className="space-y-3">
               <div>
-                <label className="text-xs font-medium text-gray-700">
+                <label className="text-xs font-medium text-slate-300">
                   Device ID
                 </label>
                 <Input
@@ -108,7 +108,7 @@ export default function TrainingManager() {
                 />
               </div>
               <div>
-                <label className="text-xs font-medium text-gray-700">
+                <label className="text-xs font-medium text-slate-300">
                   Training Type
                 </label>
                 <Select value={trainingType} onValueChange={setTrainingType}>
@@ -151,7 +151,7 @@ export default function TrainingManager() {
         </CardHeader>
         <CardContent className="space-y-2">
           {activeSessions.filter((s) => s.status === "active").length === 0 ? (
-            <p className="text-xs text-gray-500 text-center py-4">
+            <p className="text-xs text-slate-400 text-center py-4">
               No active sessions
             </p>
           ) : (
@@ -160,14 +160,14 @@ export default function TrainingManager() {
               .map((session) => (
                 <div
                   key={session.id}
-                  className="p-3 border rounded text-xs bg-white hover:bg-gray-50"
+                  className="p-3 border rounded text-xs bg-slate-900 hover:bg-slate-800/50"
                 >
                   <div className="flex items-center justify-between mb-2">
                     <div>
-                      <p className="font-medium text-gray-900">
+                      <p className="font-medium text-slate-50">
                         {session.trainingType}
                       </p>
-                      <p className="text-gray-500">{session.deviceId}</p>
+                      <p className="text-slate-400">{session.deviceId}</p>
                     </div>
                     <Button
                       onClick={() => handleStopTraining(session.id)}
@@ -195,15 +195,15 @@ export default function TrainingManager() {
       <div className="grid grid-cols-3 gap-3">
         <Card>
           <CardContent className="p-3">
-            <p className="text-xs text-gray-500">Total Sessions</p>
-            <p className="text-lg font-bold text-gray-900 mt-1">
+            <p className="text-xs text-slate-400">Total Sessions</p>
+            <p className="text-lg font-bold text-slate-50 mt-1">
               {trainingPerformance.length}
             </p>
           </CardContent>
         </Card>
         <Card>
           <CardContent className="p-3">
-            <p className="text-xs text-gray-500">Completed</p>
+            <p className="text-xs text-slate-400">Completed</p>
             <p className="text-lg font-bold text-green-600 mt-1">
               {trainingPerformance.filter((t) => t.completed).length}
             </p>
@@ -211,7 +211,7 @@ export default function TrainingManager() {
         </Card>
         <Card>
           <CardContent className="p-3">
-            <p className="text-xs text-gray-500">Avg Score</p>
+            <p className="text-xs text-slate-400">Avg Score</p>
             <p className="text-lg font-bold text-blue-600 mt-1">
               {trainingPerformance.length > 0
                 ? (
@@ -238,7 +238,7 @@ export default function TrainingManager() {
         </CardHeader>
         <CardContent>
           {trainingPerformance.length === 0 ? (
-            <p className="text-xs text-gray-500 text-center py-4">
+            <p className="text-xs text-slate-400 text-center py-4">
               No training history yet
             </p>
           ) : (
@@ -246,17 +246,17 @@ export default function TrainingManager() {
               {trainingPerformance.map((performance, index) => (
                 <div
                   key={index}
-                  className="p-3 border rounded text-xs bg-white hover:bg-gray-50"
+                  className="p-3 border rounded text-xs bg-slate-900 hover:bg-slate-800/50"
                 >
                   <div className="flex items-start justify-between mb-2">
                     <div>
-                      <p className="font-medium text-gray-900">
+                      <p className="font-medium text-slate-50">
                         {performance.trainingType}
                       </p>
-                      <p className="text-gray-500">{performance.deviceId}</p>
+                      <p className="text-slate-400">{performance.deviceId}</p>
                     </div>
                     <div className="text-right">
-                      <p className="font-bold text-gray-900">
+                      <p className="font-bold text-slate-50">
                         {performance.score}%
                       </p>
                       <Badge
@@ -281,7 +281,7 @@ export default function TrainingManager() {
                       style={{ width: `${performance.score}%` }}
                     ></div>
                   </div>
-                  <p className="text-gray-500 mt-2">
+                  <p className="text-slate-400 mt-2">
                     Duration: {performance.duration} minutes •{" "}
                     {new Date(performance.startTime).toLocaleDateString()}
                   </p>
@@ -318,11 +318,11 @@ export default function TrainingManager() {
           ].map((module) => (
             <div
               key={module.id}
-              className="p-2 border rounded text-xs flex items-center justify-between bg-white"
+              className="p-2 border rounded text-xs flex items-center justify-between bg-slate-900"
             >
               <div>
-                <p className="font-medium text-gray-900">{module.name}</p>
-                <p className="text-gray-500">{module.duration}</p>
+                <p className="font-medium text-slate-50">{module.name}</p>
+                <p className="text-slate-400">{module.duration}</p>
               </div>
               <Button size="sm" variant="outline" className="text-xs">
                 Assign
@@ -350,8 +350,8 @@ export default function TrainingManager() {
           ].map((module, index) => (
             <div key={index} className="text-xs">
               <div className="flex justify-between mb-1">
-                <p className="text-gray-900">{module.name}</p>
-                <p className="font-bold text-gray-900">{module.rate}%</p>
+                <p className="text-slate-50">{module.name}</p>
+                <p className="font-bold text-slate-50">{module.rate}%</p>
               </div>
               <div className="w-full bg-gray-200 rounded-full h-2">
                 <div
@@ -372,3 +372,5 @@ export default function TrainingManager() {
     </div>
   );
 }
+
+

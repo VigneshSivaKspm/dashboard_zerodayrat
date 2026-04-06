@@ -109,7 +109,7 @@ export default function AnalyticsReports() {
         <CardContent className="space-y-2">
           <div className="grid grid-cols-4 gap-2">
             <div>
-              <label className="text-xs font-medium text-gray-700">
+              <label className="text-xs font-medium text-slate-300">
                 Report Type
               </label>
               <Select value={reportType} onValueChange={setReportType}>
@@ -125,7 +125,7 @@ export default function AnalyticsReports() {
               </Select>
             </div>
             <div>
-              <label className="text-xs font-medium text-gray-700">
+              <label className="text-xs font-medium text-slate-300">
                 Start Date
               </label>
               <Input
@@ -136,7 +136,7 @@ export default function AnalyticsReports() {
               />
             </div>
             <div>
-              <label className="text-xs font-medium text-gray-700">
+              <label className="text-xs font-medium text-slate-300">
                 End Date
               </label>
               <Input
@@ -147,7 +147,7 @@ export default function AnalyticsReports() {
               />
             </div>
             <div>
-              <label className="text-xs font-medium text-gray-700">
+              <label className="text-xs font-medium text-slate-300">
                 Format
               </label>
               <Select value={exportFormat} onValueChange={setExportFormat}>
@@ -176,15 +176,15 @@ export default function AnalyticsReports() {
       <div className="grid grid-cols-4 gap-3">
         <Card>
           <CardContent className="p-3">
-            <p className="text-xs text-gray-500">Total Devices</p>
-            <p className="text-lg font-bold text-gray-900 mt-1">
+            <p className="text-xs text-slate-400">Total Devices</p>
+            <p className="text-lg font-bold text-slate-50 mt-1">
               {dashboardStats?.totalDevices || 0}
             </p>
           </CardContent>
         </Card>
         <Card>
           <CardContent className="p-3">
-            <p className="text-xs text-gray-500">Active Devices</p>
+            <p className="text-xs text-slate-400">Active Devices</p>
             <p className="text-lg font-bold text-green-600 mt-1">
               {dashboardStats?.activeDevices || 0}
             </p>
@@ -192,7 +192,7 @@ export default function AnalyticsReports() {
         </Card>
         <Card>
           <CardContent className="p-3">
-            <p className="text-xs text-gray-500">Total SMS</p>
+            <p className="text-xs text-slate-400">Total SMS</p>
             <p className="text-lg font-bold text-blue-600 mt-1">
               {activityReport?.totalSMS || dashboardStats?.totalSMS || 0}
             </p>
@@ -200,7 +200,7 @@ export default function AnalyticsReports() {
         </Card>
         <Card>
           <CardContent className="p-3">
-            <p className="text-xs text-gray-500">Total Notifications</p>
+            <p className="text-xs text-slate-400">Total Notifications</p>
             <p className="text-lg font-bold text-purple-600 mt-1">
               {activityReport?.totalNotifications ||
                 dashboardStats?.totalNotifications ||
@@ -228,7 +228,7 @@ export default function AnalyticsReports() {
                     key={index}
                     className="flex items-center justify-between text-xs"
                   >
-                    <p className="text-gray-900">{app.name}</p>
+                    <p className="text-slate-50">{app.name}</p>
                     <div className="flex items-center gap-2">
                       <div className="w-20 bg-gray-200 rounded h-2">
                         <div
@@ -238,13 +238,13 @@ export default function AnalyticsReports() {
                           }}
                         ></div>
                       </div>
-                      <span className="text-gray-600 w-8">{app.count}</span>
+                      <span className="text-slate-300 w-8">{app.count}</span>
                     </div>
                   </div>
                 ))}
             </div>
           ) : (
-            <p className="text-xs text-gray-500 text-center py-4">
+            <p className="text-xs text-slate-400 text-center py-4">
               Generate a report to view data
             </p>
           )}
@@ -265,13 +265,13 @@ export default function AnalyticsReports() {
               {trainingPerformance.slice(0, 5).map((perf, index) => (
                 <div
                   key={index}
-                  className="p-2 text-xs bg-gray-50 rounded flex items-center justify-between"
+                  className="p-2 text-xs bg-slate-800/50 rounded flex items-center justify-between"
                 >
                   <div>
-                    <p className="font-medium text-gray-900">
+                    <p className="font-medium text-slate-50">
                       {perf.trainingType}
                     </p>
-                    <p className="text-gray-500">{perf.deviceId}</p>
+                    <p className="text-slate-400">{perf.deviceId}</p>
                   </div>
                   <div className="text-right">
                     <Badge variant="outline" className="text-xs">
@@ -282,7 +282,7 @@ export default function AnalyticsReports() {
               ))}
             </div>
           ) : (
-            <p className="text-xs text-gray-500 text-center py-4">
+            <p className="text-xs text-slate-400 text-center py-4">
               No training data available
             </p>
           )}
@@ -304,9 +304,9 @@ export default function AnalyticsReports() {
           {topDevices.length > 0 ? (
             <div className="space-y-2">
               {topDevices.slice(0, 5).map((device: any, index: number) => (
-                <div key={index} className="p-2 text-xs bg-gray-50 rounded">
+                <div key={index} className="p-2 text-xs bg-slate-800/50 rounded">
                   <div className="flex items-center justify-between mb-1">
-                    <p className="font-medium text-gray-900">{device.name}</p>
+                    <p className="font-medium text-slate-50">{device.name}</p>
                     <Badge variant="outline" className="text-xs">
                       {device.activityCount} activities
                     </Badge>
@@ -323,7 +323,7 @@ export default function AnalyticsReports() {
               ))}
             </div>
           ) : (
-            <p className="text-xs text-gray-500 text-center py-4">
+            <p className="text-xs text-slate-400 text-center py-4">
               No device data available
             </p>
           )}
@@ -377,3 +377,5 @@ export default function AnalyticsReports() {
     </div>
   );
 }
+
+

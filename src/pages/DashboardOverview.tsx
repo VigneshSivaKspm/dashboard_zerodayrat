@@ -39,7 +39,7 @@ export default function DashboardOverview() {
       <div className="flex items-center justify-center h-screen">
         <div className="text-center">
           <div className="animate-spin h-8 w-8 border-b-2 border-blue-500 rounded-full mx-auto mb-2"></div>
-          <p className="text-sm text-gray-500">Loading dashboard...</p>
+          <p className="text-sm text-slate-400">Loading dashboard...</p>
         </div>
       </div>
     );
@@ -73,8 +73,8 @@ export default function DashboardOverview() {
           <CardContent className="p-3">
             <div className="flex items-start justify-between">
               <div>
-                <p className="text-xs text-gray-500">Connected Devices</p>
-                <p className="text-lg font-bold text-gray-900 mt-1">
+                <p className="text-xs text-slate-400">Connected Devices</p>
+                <p className="text-lg font-bold text-slate-50 mt-1">
                   {dashboardStats?.totalDevices || 0}
                 </p>
               </div>
@@ -87,7 +87,7 @@ export default function DashboardOverview() {
           <CardContent className="p-3">
             <div className="flex items-start justify-between">
               <div>
-                <p className="text-xs text-gray-500">Active Now</p>
+                <p className="text-xs text-slate-400">Active Now</p>
                 <p className="text-lg font-bold text-green-600 mt-1">
                   {dashboardStats?.activeDevices || 0}
                 </p>
@@ -101,7 +101,7 @@ export default function DashboardOverview() {
           <CardContent className="p-3">
             <div className="flex items-start justify-between">
               <div>
-                <p className="text-xs text-gray-500">Alerts</p>
+                <p className="text-xs text-slate-400">Alerts</p>
                 <p className="text-lg font-bold text-red-600 mt-1">
                   {dashboardStats?.alertCount || 0}
                 </p>
@@ -115,7 +115,7 @@ export default function DashboardOverview() {
           <CardContent className="p-3">
             <div className="flex items-start justify-between">
               <div>
-                <p className="text-xs text-gray-500">Device Groups</p>
+                <p className="text-xs text-slate-400">Device Groups</p>
                 <p className="text-lg font-bold text-purple-600 mt-1">
                   {deviceGroups?.length || 0}
                 </p>
@@ -138,17 +138,17 @@ export default function DashboardOverview() {
           {dashboardStats?.devices?.slice(0, 5).map((device: any) => (
             <div
               key={device.id}
-              className="flex items-center justify-between p-2 bg-gray-50 rounded text-xs"
+              className="flex items-center justify-between p-2 bg-slate-800/50 rounded text-xs"
             >
               <div className="flex items-center gap-2 flex-1">
                 <div
                   className={`w-2 h-2 rounded-full ${device.isOnline ? "bg-green-500" : "bg-gray-300"}`}
                 ></div>
                 <div className="flex-1 min-w-0">
-                  <p className="font-medium text-gray-900 truncate">
+                  <p className="font-medium text-slate-50 truncate">
                     {device.name}
                   </p>
-                  <p className="text-gray-500">{device.model}</p>
+                  <p className="text-slate-400">{device.model}</p>
                 </div>
               </div>
               <div className="flex items-center gap-1 ml-2">
@@ -187,8 +187,8 @@ export default function DashboardOverview() {
               >
                 <Clock className="h-4 w-4 text-gray-400 mt-0.5 flex-shrink-0" />
                 <div className="flex-1 min-w-0">
-                  <p className="text-gray-900">{activity.description}</p>
-                  <p className="text-gray-500 text-xs mt-0.5">
+                  <p className="text-slate-50">{activity.description}</p>
+                  <p className="text-slate-400 text-xs mt-0.5">
                     {activity.device} • {activity.time}
                   </p>
                 </div>
@@ -208,9 +208,9 @@ export default function DashboardOverview() {
         <CardContent>
           <div className="grid grid-cols-2 gap-2 text-xs">
             {dashboardStats?.statusMetrics?.map((metric: any) => (
-              <div key={metric.id} className="p-3 bg-gray-50 rounded">
-                <p className="text-gray-500">{metric.label}</p>
-                <p className="text-lg font-bold text-gray-900 mt-1">
+              <div key={metric.id} className="p-3 bg-slate-800/50 rounded">
+                <p className="text-slate-400">{metric.label}</p>
+                <p className="text-lg font-bold text-slate-50 mt-1">
                   {metric.value}
                 </p>
                 <div className="w-full bg-gray-200 rounded-full h-1 mt-2">
@@ -246,3 +246,5 @@ export default function DashboardOverview() {
     </div>
   );
 }
+
+

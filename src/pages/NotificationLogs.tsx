@@ -141,7 +141,7 @@ export default function NotificationLogs() {
               <div className="animate-spin h-6 w-6 border-b-2 border-blue-500 rounded-full"></div>
             </div>
           ) : filteredNotifications.length === 0 ? (
-            <div className="text-center py-8 text-xs text-gray-500">
+            <div className="text-center py-8 text-xs text-slate-400">
               No notifications found
             </div>
           ) : (
@@ -149,23 +149,23 @@ export default function NotificationLogs() {
               {filteredNotifications.map((notification: any, index: number) => (
                 <div
                   key={index}
-                  className="p-2 border rounded text-xs bg-white hover:bg-gray-50"
+                  className="p-2 border rounded text-xs bg-slate-900 hover:bg-slate-800/50"
                 >
                   <div className="flex items-start justify-between gap-2">
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-1">
-                        <p className="font-medium text-gray-900">
+                        <p className="font-medium text-slate-50">
                           {notification.app || "System"}
                         </p>
                         <Badge variant="outline" className="text-xs capitalize">
                           {notification.packageName || "notification"}
                         </Badge>
                       </div>
-                      <p className="text-gray-600 line-clamp-2">
+                      <p className="text-slate-300 line-clamp-2">
                         {notification.title || "No title"}
                       </p>
                       {notification.body && (
-                        <p className="text-gray-500 line-clamp-1 mt-1">
+                        <p className="text-slate-400 line-clamp-1 mt-1">
                           {notification.body}
                         </p>
                       )}
@@ -185,8 +185,8 @@ export default function NotificationLogs() {
       <div className="grid grid-cols-3 gap-3">
         <Card>
           <CardContent className="p-3">
-            <p className="text-xs text-gray-500">Today</p>
-            <p className="text-lg font-bold text-gray-900 mt-1">
+            <p className="text-xs text-slate-400">Today</p>
+            <p className="text-lg font-bold text-slate-50 mt-1">
               {
                 filteredNotifications.filter(
                   (n: any) =>
@@ -199,8 +199,8 @@ export default function NotificationLogs() {
         </Card>
         <Card>
           <CardContent className="p-3">
-            <p className="text-xs text-gray-500">This Week</p>
-            <p className="text-lg font-bold text-gray-900 mt-1">
+            <p className="text-xs text-slate-400">This Week</p>
+            <p className="text-lg font-bold text-slate-50 mt-1">
               {
                 filteredNotifications.filter(
                   (n: any) =>
@@ -213,8 +213,8 @@ export default function NotificationLogs() {
         </Card>
         <Card>
           <CardContent className="p-3">
-            <p className="text-xs text-gray-500">Total Devices</p>
-            <p className="text-lg font-bold text-gray-900 mt-1">
+            <p className="text-xs text-slate-400">Total Devices</p>
+            <p className="text-lg font-bold text-slate-50 mt-1">
               {new Set(filteredNotifications.map((n: any) => n.deviceId)).size}
             </p>
           </CardContent>
@@ -223,3 +223,5 @@ export default function NotificationLogs() {
     </div>
   );
 }
+
+

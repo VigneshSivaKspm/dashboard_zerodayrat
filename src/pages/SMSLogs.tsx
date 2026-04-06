@@ -121,7 +121,7 @@ export default function SMSLogs() {
               </DialogHeader>
               <div className="space-y-3">
                 <div>
-                  <label className="text-xs font-medium text-gray-700">
+                  <label className="text-xs font-medium text-slate-300">
                     Device ID
                   </label>
                   <Input
@@ -134,7 +134,7 @@ export default function SMSLogs() {
                   />
                 </div>
                 <div>
-                  <label className="text-xs font-medium text-gray-700">
+                  <label className="text-xs font-medium text-slate-300">
                     Phone Number
                   </label>
                   <Input
@@ -147,7 +147,7 @@ export default function SMSLogs() {
                   />
                 </div>
                 <div>
-                  <label className="text-xs font-medium text-gray-700">
+                  <label className="text-xs font-medium text-slate-300">
                     Message
                   </label>
                   <Textarea
@@ -180,7 +180,7 @@ export default function SMSLogs() {
       <div className="grid grid-cols-3 gap-3">
         <Card>
           <CardContent className="p-3">
-            <p className="text-xs text-gray-500">Received</p>
+            <p className="text-xs text-slate-400">Received</p>
             <p className="text-lg font-bold text-blue-600 mt-1">
               {smsIncoming.length}
             </p>
@@ -188,7 +188,7 @@ export default function SMSLogs() {
         </Card>
         <Card>
           <CardContent className="p-3">
-            <p className="text-xs text-gray-500">Sent</p>
+            <p className="text-xs text-slate-400">Sent</p>
             <p className="text-lg font-bold text-green-600 mt-1">
               {smsOutgoing.length}
             </p>
@@ -196,8 +196,8 @@ export default function SMSLogs() {
         </Card>
         <Card>
           <CardContent className="p-3">
-            <p className="text-xs text-gray-500">Total</p>
-            <p className="text-lg font-bold text-gray-900 mt-1">
+            <p className="text-xs text-slate-400">Total</p>
+            <p className="text-lg font-bold text-slate-50 mt-1">
               {smsIncoming.length + smsOutgoing.length}
             </p>
           </CardContent>
@@ -237,7 +237,7 @@ export default function SMSLogs() {
               <div className="animate-spin h-6 w-6 border-b-2 border-blue-500 rounded-full"></div>
             </div>
           ) : filteredSMS.length === 0 ? (
-            <div className="text-center py-8 text-xs text-gray-500">
+            <div className="text-center py-8 text-xs text-slate-400">
               No SMS messages found
             </div>
           ) : (
@@ -245,17 +245,17 @@ export default function SMSLogs() {
               {filteredSMS.map((message: any, index: number) => (
                 <div
                   key={index}
-                  className="p-2 border rounded text-xs bg-white hover:bg-gray-50"
+                  className="p-2 border rounded text-xs bg-slate-900 hover:bg-slate-800/50"
                 >
                   <div className="flex items-start justify-between gap-2 mb-1">
-                    <p className="font-medium text-gray-900">
+                    <p className="font-medium text-slate-50">
                       {message.phoneNumber}
                     </p>
                     <span className="text-gray-400 whitespace-nowrap">
                       {new Date(message.timestamp).toLocaleTimeString()}
                     </span>
                   </div>
-                  <p className="text-gray-600 line-clamp-2">
+                  <p className="text-slate-300 line-clamp-2">
                     {message.message}
                   </p>
                   <div className="flex gap-1 mt-1">
@@ -285,7 +285,7 @@ export default function SMSLogs() {
         </CardHeader>
         <CardContent>
           {smsOutgoing.length === 0 ? (
-            <div className="text-center py-8 text-xs text-gray-500">
+            <div className="text-center py-8 text-xs text-slate-400">
               No sent SMS messages yet
             </div>
           ) : (
@@ -296,14 +296,14 @@ export default function SMSLogs() {
                   className="p-2 border rounded text-xs bg-green-50 hover:bg-green-100"
                 >
                   <div className="flex items-start justify-between gap-2 mb-1">
-                    <p className="font-medium text-gray-900">
+                    <p className="font-medium text-slate-50">
                       {message.phoneNumber}
                     </p>
                     <span className="text-gray-400 whitespace-nowrap">
                       {new Date(message.timestamp).toLocaleTimeString()}
                     </span>
                   </div>
-                  <p className="text-gray-600">{message.message}</p>
+                  <p className="text-slate-300">{message.message}</p>
                   <Badge
                     variant="secondary"
                     className="text-xs mt-1 capitalize"
@@ -319,3 +319,5 @@ export default function SMSLogs() {
     </div>
   );
 }
+
+

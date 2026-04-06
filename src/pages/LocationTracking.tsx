@@ -84,7 +84,7 @@ export default function LocationTracking() {
             <MapPin className="h-6 w-6" />
             Location Tracking
           </h1>
-          <p className="text-xs text-gray-500 mt-1">
+          <p className="text-xs text-slate-400 mt-1">
             Real-time device location tracking
           </p>
         </div>
@@ -102,7 +102,7 @@ export default function LocationTracking() {
       {/* Device Selection */}
       <Card>
         <CardContent className="p-3">
-          <label className="text-xs font-medium text-gray-700">
+          <label className="text-xs font-medium text-slate-300">
             Select Device
           </label>
           <Input
@@ -133,58 +133,58 @@ export default function LocationTracking() {
           ) : currentLocation ? (
             <div className="space-y-2 text-xs">
               <div className="grid grid-cols-2 gap-2">
-                <div className="p-2 bg-gray-50 rounded">
-                  <p className="text-gray-500">Latitude</p>
-                  <p className="font-mono font-semibold text-gray-900">
+                <div className="p-2 bg-slate-800/50 rounded">
+                  <p className="text-slate-400">Latitude</p>
+                  <p className="font-mono font-semibold text-slate-50">
                     {currentLocation.latitude?.toFixed(6)}
                   </p>
                 </div>
-                <div className="p-2 bg-gray-50 rounded">
-                  <p className="text-gray-500">Longitude</p>
-                  <p className="font-mono font-semibold text-gray-900">
+                <div className="p-2 bg-slate-800/50 rounded">
+                  <p className="text-slate-400">Longitude</p>
+                  <p className="font-mono font-semibold text-slate-50">
                     {currentLocation.longitude?.toFixed(6)}
                   </p>
                 </div>
-                <div className="p-2 bg-gray-50 rounded">
-                  <p className="text-gray-500">Accuracy</p>
-                  <p className="font-semibold text-gray-900">
+                <div className="p-2 bg-slate-800/50 rounded">
+                  <p className="text-slate-400">Accuracy</p>
+                  <p className="font-semibold text-slate-50">
                     ±{currentLocation.accuracy}m
                   </p>
                 </div>
-                <div className="p-2 bg-gray-50 rounded">
-                  <p className="text-gray-500">Provider</p>
-                  <p className="font-semibold text-gray-900 capitalize">
+                <div className="p-2 bg-slate-800/50 rounded">
+                  <p className="text-slate-400">Provider</p>
+                  <p className="font-semibold text-slate-50 capitalize">
                     {currentLocation.provider}
                   </p>
                 </div>
               </div>
               {currentLocation.address && (
                 <div className="p-2 bg-blue-50 rounded">
-                  <p className="text-gray-500">Address</p>
-                  <p className="text-gray-900">{currentLocation.address}</p>
+                  <p className="text-slate-400">Address</p>
+                  <p className="text-slate-50">{currentLocation.address}</p>
                 </div>
               )}
               <div className="grid grid-cols-2 gap-2 pt-2">
-                <div className="p-2 bg-gray-50 rounded">
-                  <p className="text-gray-500">Speed</p>
-                  <p className="font-semibold text-gray-900">
+                <div className="p-2 bg-slate-800/50 rounded">
+                  <p className="text-slate-400">Speed</p>
+                  <p className="font-semibold text-slate-50">
                     {currentLocation.speed} m/s
                   </p>
                 </div>
-                <div className="p-2 bg-gray-50 rounded">
-                  <p className="text-gray-500">Heading</p>
-                  <p className="font-semibold text-gray-900">
+                <div className="p-2 bg-slate-800/50 rounded">
+                  <p className="text-slate-400">Heading</p>
+                  <p className="font-semibold text-slate-50">
                     {currentLocation.heading}°
                   </p>
                 </div>
               </div>
-              <p className="text-gray-500 text-xs pt-2">
+              <p className="text-slate-400 text-xs pt-2">
                 Updated:{" "}
                 {new Date(currentLocation.timestamp).toLocaleTimeString()}
               </p>
             </div>
           ) : (
-            <p className="text-center py-4 text-xs text-gray-500">
+            <p className="text-center py-4 text-xs text-slate-400">
               No location data available
             </p>
           )}
@@ -204,7 +204,7 @@ export default function LocationTracking() {
         </CardHeader>
         <CardContent>
           {locationHistory.length === 0 ? (
-            <p className="text-center py-4 text-xs text-gray-500">
+            <p className="text-center py-4 text-xs text-slate-400">
               No history yet
             </p>
           ) : (
@@ -212,15 +212,15 @@ export default function LocationTracking() {
               {locationHistory.slice(0, 20).map((location, index) => (
                 <div
                   key={index}
-                  className="p-2 border rounded text-xs bg-white hover:bg-gray-50"
+                  className="p-2 border rounded text-xs bg-slate-900 hover:bg-slate-800/50"
                 >
                   <div className="flex items-start justify-between mb-1">
                     <div>
-                      <p className="font-mono font-semibold text-gray-900">
+                      <p className="font-mono font-semibold text-slate-50">
                         {location.latitude?.toFixed(4)},{" "}
                         {location.longitude?.toFixed(4)}
                       </p>
-                      <p className="text-gray-500">
+                      <p className="text-slate-400">
                         Accuracy: ±{location.accuracy}m
                       </p>
                     </div>
@@ -263,7 +263,7 @@ export default function LocationTracking() {
               </DialogHeader>
               <div className="space-y-3">
                 <div>
-                  <label className="text-xs font-medium text-gray-700">
+                  <label className="text-xs font-medium text-slate-300">
                     Geofence Name
                   </label>
                   <Input
@@ -274,7 +274,7 @@ export default function LocationTracking() {
                   />
                 </div>
                 <div>
-                  <label className="text-xs font-medium text-gray-700">
+                  <label className="text-xs font-medium text-slate-300">
                     Radius (meters)
                   </label>
                   <Input
@@ -285,7 +285,7 @@ export default function LocationTracking() {
                     className="mt-1 text-sm h-8"
                   />
                 </div>
-                <p className="text-xs text-gray-500">
+                <p className="text-xs text-slate-400">
                   Geofence will be created at current location:{" "}
                   {currentLocation?.latitude?.toFixed(4)},{" "}
                   {currentLocation?.longitude?.toFixed(4)}
@@ -303,18 +303,18 @@ export default function LocationTracking() {
           </Dialog>
 
           {geofences.length === 0 ? (
-            <p className="text-center py-4 text-xs text-gray-500">
+            <p className="text-center py-4 text-xs text-slate-400">
               No geofences yet
             </p>
           ) : (
             geofences.map((geofence) => (
               <div
                 key={geofence.id}
-                className="p-2 border rounded text-xs bg-white flex items-center justify-between"
+                className="p-2 border rounded text-xs bg-slate-900 flex items-center justify-between"
               >
                 <div>
-                  <p className="font-medium text-gray-900">{geofence.name}</p>
-                  <p className="text-gray-500">
+                  <p className="font-medium text-slate-50">{geofence.name}</p>
+                  <p className="text-slate-400">
                     Radius: {geofence.radius}m • {geofence.latitude?.toFixed(4)}
                     , {geofence.longitude?.toFixed(4)}
                   </p>
@@ -350,20 +350,20 @@ export default function LocationTracking() {
         </CardHeader>
         <CardContent className="space-y-2">
           <div className="flex items-center justify-between text-xs">
-            <span className="text-gray-600">Status</span>
+            <span className="text-slate-300">Status</span>
             <Badge variant={tracking ? "default" : "secondary"}>
               {tracking ? "Active" : "Inactive"}
             </Badge>
           </div>
           <div className="flex items-center justify-between text-xs">
-            <span className="text-gray-600">Device</span>
-            <span className="font-mono text-gray-900">
+            <span className="text-slate-300">Device</span>
+            <span className="font-mono text-slate-50">
               {selectedDeviceId || "Not selected"}
             </span>
           </div>
           <div className="flex items-center justify-between text-xs">
-            <span className="text-gray-600">Last Update</span>
-            <span className="text-gray-900">
+            <span className="text-slate-300">Last Update</span>
+            <span className="text-slate-50">
               {currentLocation?.timestamp
                 ? new Date(currentLocation.timestamp).toLocaleTimeString()
                 : "Never"}
@@ -374,3 +374,5 @@ export default function LocationTracking() {
     </div>
   );
 }
+
+

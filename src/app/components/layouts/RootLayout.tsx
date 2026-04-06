@@ -99,7 +99,7 @@ export function RootLayout() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-200">
+    <div className="dark min-h-screen bg-slate-950 text-slate-200">
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 h-16 bg-slate-900 border-b border-slate-800 z-40 flex items-center justify-between px-4">
         <div className="flex items-center gap-4">

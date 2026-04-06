@@ -82,7 +82,7 @@ export default function ActivityTimeline() {
         <CardContent className="p-3 space-y-2">
           <div className="grid grid-cols-3 gap-2">
             <div>
-              <label className="text-xs font-medium text-gray-700">
+              <label className="text-xs font-medium text-slate-300">
                 Start Date
               </label>
               <Input
@@ -95,7 +95,7 @@ export default function ActivityTimeline() {
               />
             </div>
             <div>
-              <label className="text-xs font-medium text-gray-700">
+              <label className="text-xs font-medium text-slate-300">
                 End Date
               </label>
               <Input
@@ -108,7 +108,7 @@ export default function ActivityTimeline() {
               />
             </div>
             <div>
-              <label className="text-xs font-medium text-gray-700">
+              <label className="text-xs font-medium text-slate-300">
                 Device
               </label>
               <Select value={selectedDevice} onValueChange={setSelectedDevice}>
@@ -131,8 +131,8 @@ export default function ActivityTimeline() {
       <div className="grid grid-cols-4 gap-3">
         <Card>
           <CardContent className="p-3">
-            <p className="text-xs text-gray-500">Total Activities</p>
-            <p className="text-lg font-bold text-gray-900 mt-1">
+            <p className="text-xs text-slate-400">Total Activities</p>
+            <p className="text-lg font-bold text-slate-50 mt-1">
               {activityReport?.timelineData?.reduce(
                 (sum: number, item: any) => sum + (item.count || 0),
                 0,
@@ -142,7 +142,7 @@ export default function ActivityTimeline() {
         </Card>
         <Card>
           <CardContent className="p-3">
-            <p className="text-xs text-gray-500">Notifications</p>
+            <p className="text-xs text-slate-400">Notifications</p>
             <p className="text-lg font-bold text-blue-600 mt-1">
               {activityReport?.totalNotifications || 0}
             </p>
@@ -150,7 +150,7 @@ export default function ActivityTimeline() {
         </Card>
         <Card>
           <CardContent className="p-3">
-            <p className="text-xs text-gray-500">SMS Messages</p>
+            <p className="text-xs text-slate-400">SMS Messages</p>
             <p className="text-lg font-bold text-green-600 mt-1">
               {activityReport?.totalSMS || 0}
             </p>
@@ -158,7 +158,7 @@ export default function ActivityTimeline() {
         </Card>
         <Card>
           <CardContent className="p-3">
-            <p className="text-xs text-gray-500">Media Access</p>
+            <p className="text-xs text-slate-400">Media Access</p>
             <p className="text-lg font-bold text-purple-600 mt-1">
               {activityReport?.totalPhotos || 0}
             </p>
@@ -194,12 +194,12 @@ export default function ActivityTimeline() {
                   </div>
                   <div className="flex-1">
                     <div className="flex items-center justify-between">
-                      <p className="font-medium text-gray-900">{item.time}</p>
+                      <p className="font-medium text-slate-50">{item.time}</p>
                       <Badge variant="outline" className="text-xs">
                         {item.count} activities
                       </Badge>
                     </div>
-                    <p className="text-gray-600 mt-1">
+                    <p className="text-slate-300 mt-1">
                       {item.description || "Device activity recorded"}
                     </p>
                   </div>
@@ -207,7 +207,7 @@ export default function ActivityTimeline() {
               ))}
             </div>
           ) : (
-            <div className="text-center py-8 text-xs text-gray-500">
+            <div className="text-center py-8 text-xs text-slate-400">
               No activities found for the selected period
             </div>
           )}
@@ -228,9 +228,9 @@ export default function ActivityTimeline() {
               {activityReport.topApps.map((app: any, index: number) => (
                 <div
                   key={index}
-                  className="flex items-center justify-between p-2 text-xs bg-gray-50 rounded"
+                  className="flex items-center justify-between p-2 text-xs bg-slate-800/50 rounded"
                 >
-                  <p className="font-medium text-gray-900">{app.name}</p>
+                  <p className="font-medium text-slate-50">{app.name}</p>
                   <div className="flex items-center gap-2">
                     <div className="w-16 bg-gray-200 rounded-full h-2">
                       <div
@@ -240,7 +240,7 @@ export default function ActivityTimeline() {
                         }}
                       ></div>
                     </div>
-                    <span className="font-bold text-gray-700 w-6">
+                    <span className="font-bold text-slate-300 w-6">
                       {app.count}
                     </span>
                   </div>
@@ -248,7 +248,7 @@ export default function ActivityTimeline() {
               ))}
             </div>
           ) : (
-            <div className="text-center py-8 text-xs text-gray-500">
+            <div className="text-center py-8 text-xs text-slate-400">
               No app data available
             </div>
           )}
@@ -257,3 +257,5 @@ export default function ActivityTimeline() {
     </div>
   );
 }
+
+
