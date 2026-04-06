@@ -1,24 +1,10 @@
 import { useState } from "react";
-import {
-  Users,
-  UserCheck,
-  UserX,
-  UserPlus,
-  Trash2,
-  MoreVertical,
-} from "lucide-react";
+import { Users, UserCheck, UserX, UserPlus } from "lucide-react";
 import { StatCard } from "../components/dashboard/StatCard";
 import { UserTable } from "../components/users/UserTable";
 import { BlockUserDialog } from "../components/users/BlockUserDialog";
 import { AllowUserDialog } from "../components/users/AllowUserDialog";
 import { DeleteUserDialog } from "../components/users/DeleteUserDialog";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "../components/ui/dropdown-menu";
-import { Button } from "../components/ui/button";
 
 export interface User {
   id: string;
