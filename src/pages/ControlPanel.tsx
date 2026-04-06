@@ -65,14 +65,14 @@ export default function ControlPanel() {
   };
 
   return (
-    <div className="p-4 space-y-4 bg-gray-50 min-h-screen">
+    <div className="p-4 space-y-4 bg-slate-950 min-h-screen">
       {/* Header */}
       <div>
-        <h1 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
+        <h1 className="text-2xl font-bold text-slate-50 flex items-center gap-2">
           <Settings className="h-6 w-6" />
           Control Panel
         </h1>
-        <p className="text-xs text-gray-500 mt-1">
+        <p className="text-xs text-slate-400 mt-1">
           Manage and control connected devices
         </p>
       </div>
